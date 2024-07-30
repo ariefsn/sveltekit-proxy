@@ -1,0 +1,44 @@
+{
+  "name": "sveltekit-proxy",
+  "version": "1.0.1",
+  "description": "Proxy helper for SvelteKit, use inside the server hooks.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariefsn/sveltekit-proxy.git"
+  },
+  "keywords": [
+    "sveltekit-proxy",
+    "sveltekit",
+    "proxy",
+    "svelte",
+    "proxy",
+    "svelte-proxy",
+    "proxy",
+    "hooks"
+  ],
+  "author": "Arief Setiyo Nugroho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariefsn/sveltekit-proxy/issues"
+  },
+  "homepage": "https://github.com/ariefsn/sveltekit-proxy#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@sveltejs/kit": "^2.5.18"
+  }
+}
