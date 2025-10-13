@@ -38,24 +38,13 @@ export const handleProxy: TProxyHandle = ({
   const urlPath = `${target}${strippedPath}${event.url.search}`;
   const proxiedUrl = new URL(urlPath);
 
-  // Strip off header added by SvelteKit yet forbidden by underlying HTTP request
-  // library `undici`.
-  // https://github.com/nodejs/undici/issues/1470
-  // ✅ Clone headers safely
-  const headers = new Headers(event.request.headers);
-  headers.delete("connection");
-
-  // ✅ Create proxied request
-  let newRequest = new Request(event.request, {
-    headers
-  });
+  // ✅ Create proxied request and call onRequest callback if provided
+  const newRequest = onRequest?.({ request: event.request }) || event.request;
 
   const finalFetch = customFetch || fetch;
 
   try {
     const start = performance.now();
-    // ✅ Call onRequest callback if provided
-    newRequest = onRequest?.({ request: newRequest }) || newRequest;
     const response = await finalFetch(proxiedUrl, newRequest);
     const end = performance.now();
     const duration = end - start;

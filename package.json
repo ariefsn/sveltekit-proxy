@@ -1,6 +1,6 @@
 {
   "name": "sveltekit-proxy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Proxy helper for SvelteKit, use inside the server hooks.",
   "type": "module",
   "main": "./dist/index.js",
