@@ -1,6 +1,6 @@
 {
   "name": "sveltekit-proxy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Proxy helper for SvelteKit, use inside the server hooks.",
   "type": "module",
   "main": "./dist/index.js",
@@ -39,6 +39,6 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@sveltejs/kit": "^2.5.18"
+    "@sveltejs/kit": "^2.46.4"
   }
 }
